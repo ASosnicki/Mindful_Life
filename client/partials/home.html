@@ -1,0 +1,238 @@
+<style>
+
+/*body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 960px;
+  height: 500px;
+  position: relative;
+}*/
+
+svg {
+	width: 100%;
+	height: 500px;
+}
+
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+.kids {
+    width: 100%;
+    margin-top: 40%;
+	/*margin-bottom: 40%;*/
+    height: 800px;
+    z-index: 3;
+    background: url(./assets/texture.gif) 50% 0 #fbf9f6
+}
+#chart {
+    text-align: center;
+    /*margin-top: 50px;*/
+    /*position: absolute;*/
+}
+#logo {
+    width: 100px;
+    height: 50px;
+}
+#absolute {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+	text-align:right;
+	/*min-width: 1200px;*/
+    /*background-color: #d1d1d1;*/
+}
+nav {
+    background-color: white;
+}
+.navbar-default {
+    background: white;
+}
+.chartText {
+	position: absolute;
+	/*float: right;*/
+	/*clear: both;*/
+	margin-right:50px;
+	margin-left: 800px;
+	/*z-index: -2;*/
+	/*vertical-align: text-middle;*/
+	margin-top: 100px;
+	width: 400px;
+	height: 500px;
+}
+@media screen and (max-width: 1200px) {
+    .chartText {
+        visibility: hidden;
+    }
+}
+.kidsDisplay {
+	margin-top: 50px;
+}
+.kidsDescription {
+	margin-top: 50px;
+	margin: 40px;
+}
+
+
+path.line {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+path.area {
+  fill: #e7e7e7;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.x.axis line {
+  stroke: #fff;
+}
+
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
+.guideline {
+  margin-right: 100px;
+  float: right;
+}
+.messageText {
+	margin-top: 150px;
+}
+</style>
+<!-- <button class="randomize">randomize</button> -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      </button>
+      <img src="./assets/SCharitysmallRGB.png" id="logo">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+		   <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+		   <li><a data-toggle="modal" data-target="#loginModalSponsor" class="btn">Login</a></li>
+		   <li><a data-toggle="modal" data-target="#registerModalSponsor" class="btn">Register</a></li>
+		</ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Donate</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="text-center">
+<div class="btn-group" role="group">
+  <button type="button" class="btn btn-default" ng-click="thirteen()">2013</button>
+  <button type="button" class="btn btn-default" ng-click="fourteen()">2014</button>
+  <button type="button" class="btn btn-default" ng-click="fifteen()">2015</button>
+  <!-- <button type="button" class="btn btn-default">Right</button> -->
+</div>
+<div id="absolute">
+    <div id="chart">
+		<div class="chartText">
+			<h1>Mindful Change</h1>
+	        <h3></h3>
+		</div>
+    </div>
+
+</div>
+<div class="kids">
+    <h1 class="text-center kidsTitle">Kids Supported</h1>
+	<div class="row kidsDisplay">
+		<div class="col-md-4">
+			<img src="./assets/6f43b5263fbba79c5962514b85d34738_XS.jpg">
+			<h3>Kalyani</h3>
+			<h5 class="kidsDescription"></h5>
+		</div>
+		<div class="col-md-4">
+			<img src="./assets/19f9cefdfb07230a68581d617885a3af_XS.jpg">
+			<h3>Palani</h3>
+			<h5 class="kidsDescription"></h5>
+		</div>
+		<div class="col-md-4">
+			<img src="./assets/imageedit_2_2465428479.jpg">
+			<h3>Mala</h3>
+			<h5 class="kidsDescription"></h5>
+		</div>
+	</div>
+	<div class="row messageText">
+		<h4></h4>
+	</div>
+</div>
+<!-- <h1>Literacy by Country</h1>
+<div id="LineChartAbsolute">
+	<svg id="lineChart"></svg>
+</div>
+<nav class="navbar navbar-default navbar-bottom" role="navigation">
+  <div class="container">
+    <h6>"He who has spent has used; he who has collected has lost; but he who has given has saved his treasure forever"</h6>
+	<h5>- Hazrat Inayat Khan</h5>
+  </div> -->
+</nav>
+<!-- Modal login -->
+<div class="modal fade" id="loginModalSponsor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <label>Email</label>
+          <input type="text" ng-model="orgLogin.email"><br>
+          <label>Password</label>
+          <input type="password" ng-model="orgLogin.password">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal registration -->
+<div class="modal fade" id="registerModalSponsor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Register</h4>
+      </div>
+      <div class="modal-body">
+          <label>Name</label>
+          <input type="text" ng-model="sponsor.name"><br>
+          <label>Email</label>
+          <input type="text" ng-model="sponsor.email"><br>
+          <label>Password</label>
+          <input type="password" ng-model="sponsor.password"><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="register()">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
