@@ -1,6 +1,7 @@
 {
   "name": "saburiKonnect",
   "version": "0.0.1",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "latest",
     "express": "^4.10.0",

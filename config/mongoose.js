@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/saburiKonnect');
+mongoose.connect('mongodb://localhost/saburiKonnect:27017');
 
 var modelsPath = __dirname + '/../server/models';
 
